@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Options India | Algorithmic Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5dc;
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        .ripple-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple-btn:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #e67425 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10,10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+        .ripple-btn:active:after {
+            transform: scale(0,0);
+            opacity: 0.3;
+            transition: 0s;
+        }
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 116, 37, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 0 20px rgba(230, 116, 37, 0);
+            }
+        }
+        .animate-ripple {
+            animation: ripple 1.5s infinite;
+        }
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            transition: all 0.25s;
+            position: relative;
+        }
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background: #333;
+            transform: rotate(0);
+            transition: all 0.5s;
+        }
+        .hamburger-middle {
+            transform: translateY(7px);
+        }
+        .hamburger-bottom {
+            transform: translateY(14px);
+        }
+        .open .hamburger-top {
+            transform: rotate(45deg) translateY(6px) translateX(6px);
+        }
+        .open .hamburger-middle {
+            display: none;
+        }
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translateY(6px) translateX(-6px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://pbs.twimg.com/profile_images/1938507090391187456/7LtZDd7Q_400x400.jpg" alt="Options India Logo" class="h-10 w-10 rounded-full">
+                <span class="text-xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">OPTIONS INDIA</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#results" class="hover:text-orange-600 transition">RESULTS</a>
+                <a href="#featured" class="hover:text-orange-600 transition">FEATURED</a>
+                <a href="#contact" class="hover:text-orange-600 transition">CONTACT</a>
+                <a href="https://web.sensibull.com/verified-pnl/oculated-toy/live-positions" target="_blank" class="ripple-btn bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition relative overflow-hidden animate-ripple">
+                    LIVE TRADING
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="hamburger focus:outline-none">
+                    <span class="hamburger-top"></span>
+                    <span class="hamburger-middle"></span>
+                    <span class="hamburger-bottom"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="menu" class="hidden md:hidden bg-white absolute w-full px-4 pb-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#results" class="hover:text-orange-600 transition py-2">RESULTS</a>
+                <a href="#featured" class="hover:text-orange-600 transition py-2">FEATURED</a>
+                <a href="#contact" class="hover:text-orange-600 transition py-2">CONTACT</a>
+                <a href="https://web.sensibull.com/verified-pnl/oculated-toy/live-positions" target="_blank" class="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition text-center">
+                    LIVE TRADING
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 text-center md:text-left">
+                    <h1 class="text-5xl md:text-7xl mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">ALGORITHMIC TRADING. PROVEN RESULTS.</h1>
+                    <p class="text-xl md:text-2xl mb-10 text-gray-700">87% Accuracy | Top 10 Sensibull Trader | 5K+ Live Viewers</p>
+                    <a href="https://web.sensibull.com/verified-pnl/oculated-toy/live-positions" target="_blank" class="ripple-btn inline-block bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-orange-700 transition">
+                        WATCH OUR LIVE TRADES
+                    </a>
+                </div>
+                
+                <!-- Trading Dashboard Mockup -->
+               <div class="md:w-1/2 order-first md:order-last mb-10 md:mb-0">
+    <div class="relative">
+        <!-- Background tilt layer with visible color -->
+        <div class="absolute inset-0 bg-orange-400 opacity-30 rounded-xl -rotate-3"></div>
+
+        <!-- Foreground card with tilt -->
+        <div class="relative bg-white p-6 rounded-xl shadow-md rotate-1 border border-gray-200">
+            <!-- Chart Section -->
+            <div class="relative h-64 md:h-80 mb-4">
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+                    <div class="text-center p-4">
+                        <i class="fas fa-chart-line text-4xl text-orange-600 mb-2"></i>
+                        <p class="text-gray-600">Live Trading Dashboard</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="bg-green-100 text-green-800 py-2 rounded">Analyze</div>
+                <div class="bg-blue-100 text-blue-800 py-2 rounded">Validate</div>
+                <div class="bg-purple-100 text-purple-800 py-2 rounded">Execute</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-2/5 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Akshay Bansal" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-4xl mb-6 uppercase" style="font-family: 'Bebas Neue', sans-serif;">ABOUT AKSHAY BANSAL</h2>
+                    <h3 class="text-2xl mb-6 text-orange-600">Where Algorithmic Precision Meets Market Reality</h3>
+                    <p class="mb-6 text-lg">While most trading education stops at theory, this platform serves a different purpose: Documenting what consistent, system-driven trading actually looks like.</p>
+                    <p class="mb-8 text-lg">You won't find tips or "learning opportunities" here. What you will find:</p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-4">A Live Case Study In</h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <li class="flex items-center">
+                                <span class="bg-orange-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">✓</span>
+                                Process Over Prediction
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-orange-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">✓</span>
+                                Risk-Managed Execution
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-orange-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">✓</span>
+                                The Psychology of Algorithmic Discipline
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-4">Why Professionals Observe</h4>
+                        <ul class="space-y-2">
+                            <li>- Benchmarking against a verified 87% accuracy system</li>
+                            <li>- Studying Adaptation to volatile market conditions</li>
+                            <li>- Analyzing Trade Management from entry to exit</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-4">Featured By</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-gray-100 px-4 py-2 rounded">Elearn Markets</span>
+                            <span class="bg-gray-100 px-4 py-2 rounded">Bazaar Ke Mahir</span>
+                            <span class="bg-gray-100 px-4 py-2 rounded">Moneycontrol</span>
+                        </div>
+                    </div>
+                    
+                    <blockquote class="border-l-4 border-orange-600 pl-4 italic text-lg mb-8">
+                        "This isn't education – it's an open-source trading journal scaled for 5,000 daily observers."
+                    </blockquote>
+                    
+                    <a href="#contact" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition">
+                        LET'S CONNECT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-4xl mb-12 uppercase" style="font-family: 'Bebas Neue', sans-serif;">RESULTS SPEAKS FOR US</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md w-full h-32 flex flex-col justify-center">
+                    <div class="text-5xl font-bold text-orange-600 mb-2">87%</div>
+                    <div class="text-xl">Strategy Accuracy</div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md w-full h-32 flex flex-col justify-center">
+                    <div class="text-5xl font-bold text-orange-600 mb-2">₹2.1Cr+</div>
+                    <div class="text-xl">2025 P&L</div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md w-full h-32 flex flex-col justify-center">
+                    <div class="text-5xl font-bold text-orange-600 mb-2">6+</div>
+                    <div class="text-xl">Years in the Stock Market</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="featured" class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl mb-12 text-center uppercase" style="font-family: 'Bebas Neue', sans-serif;">FEATURED ON</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <a href="https://youtu.be/wBKq1dKiipY?si=JpsD8oOaUuztDOMM" target="_blank" class="group">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <div class="relative pb-[56.25%]">
+                            <img src="https://img.youtube.com/vi/wBKq1dKiipY/maxresdefault.jpg" alt="YouTube Video" class="absolute h-full w-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center group-hover:bg-orange-700 transition">
+                                    <i class="fas fa-play text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://youtube.com/watch?v=1PLcsmWYAvA&si=zS6WdPi840ergKHi" target="_blank" class="group">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <div class="relative pb-[56.25%]">
+                            <img src="https://img.youtube.com/vi/1PLcsmWYAvA/maxresdefault.jpg" alt="YouTube Video" class="absolute h-full w-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center group-hover:bg-orange-700 transition">
+                                    <i class="fas fa-play text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.moneycontrol.com/news/business/markets/guruspeak-akshay-bansal-a-trekkers-guide-to-option-trading-10227701.html" target="_blank" class="group">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <div class="relative pb-[56.25%]">
+                            <img src="https://images.moneycontrol.com/static-mcnews/2017/03/Moneycontrol_Logo-1-770x433.jpg" alt="Moneycontrol Article" class="absolute h-full w-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center group-hover:bg-orange-700 transition">
+                                    <i class="fas fa-newspaper text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://ramkumartrader.medium.com/trading-for-freedom-akshay-bansals-25-year-plan-to-beat-the-market-slowly-f1326294f129" target="_blank" class="group">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <div class="relative pb-[56.25%]">
+                            <img src="https://miro.medium.com/v2/resize:fit:1200/1*mBc7xsMdy3nMRcEdNNNOzw.png" alt="Medium Article" class="absolute h-full w-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                                <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center group-hover:bg-orange-700 transition">
+                                    <i class="fas fa-book-open text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-gray-50">
+  <div class="container mx-auto max-w-4xl">
+    <h2 class="text-4xl mb-12 text-center uppercase" style="font-family: 'Bebas Neue', sans-serif;">GET IN TOUCH</h2>
+    
+    <form action="https://formsubmit.co/hs2599225@gmail.com" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+      <!-- Hidden Config -->
+      <input type="hidden" name="_subject" value="New Contact Form Submission">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+
+      <div class="mb-6">
+        <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+        <input type="text" id="name" name="Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
+      </div>
+      
+      <div class="mb-6">
+        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number <span class="text-red-500">*</span></label>
+        <input type="tel" id="phone" name="Phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
+      </div>
+      
+      <div class="mb-6">
+        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+        <input type="email" id="email" name="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
+      </div>
+      
+      <div class="mb-6">
+        <label for="message" class="block text-gray-700 font-medium mb-2">How can we help?</label>
+        <textarea id="message" name="Message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"></textarea>
+      </div>
+      
+      <button type="submit" class="w-full bg-orange-600 text-white py-3 rounded-md font-medium hover:bg-orange-700 transition">
+        SUBMIT
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- twitter -->
+
+
+<!-- Twitter Timeline Card -->
+<div class="md:w-1/2 mx-auto my-10">
+  <div class="relative">
+    <!-- Tilted background -->
+    <div class="absolute inset-0 bg-blue-100 opacity-30 rounded-xl -rotate-3"></div>
+    
+    <!-- Main card -->
+    <div class="relative bg-white p-6 rounded-xl shadow-md rotate-1">
+      <div class="mb-4 text-center">
+        <h3 class="text-xl font-bold text-gray-800">Latest Tweets by Akshay</h3>
+        <p class="text-sm text-gray-500">@Options_IndiaAB</p>
+      </div>
+
+      <!-- Twitter Timeline Embed -->
+
+      <div class="overflow-hidden rounded-lg">
+        <a class="twitter-timeline"
+           data-height="400"
+           data-theme="light"
+           data-chrome="nofooter noheader"
+           href="https://twitter.com/Options_IndiaAB?ref_src=twsrc%5Etfw">
+           Tweets by @Options_IndiaAB
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <img src="https://pbs.twimg.com/profile_images/1938507090391187456/7LtZDd7Q_400x400.jpg" alt="Options India Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-xl font-bold" style="font-family: 'Bebas Neue', sans-serif;">OPTIONS INDIA</span>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://x.com/Options_IndiaAB" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/options_indiaab/" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Options_IndiaAB" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">Trading involves risk. Past performance ≠ future results.</p>
+                    <p class="text-gray-400">© 2024 Options India. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile CTA Button -->
+    <div class="md:hidden fixed bottom-6 right-6 z-50">
+        <a href="https://web.sensibull.com/verified-pnl/oculated-toy/live-positions" target="_blank" class="ripple-btn bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg animate-ripple">
+            <i class="fas fa-play text-xl"></i>
+        </a>
+    </div>
+
+
+
+
+
+<!-- Scripts -->
+
+<script src="scipt.js"></script>
+</body>
+</html>
