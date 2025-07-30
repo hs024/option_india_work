@@ -157,8 +157,9 @@
             <div class="relative h-64 md:h-80 mb-4">
                 <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
                     <div class="text-center p-4">
-                        <i class="fas fa-chart-line text-4xl text-orange-600 mb-2"></i>
-                        <p class="text-gray-600">Live Trading Dashboard</p>
+                        <!-- <i class="fas fa-chart-line text-4xl text-orange-600 mb-2"></i> -->
+                        <!-- <p class="text-gray-600">Live Trading Dashboard</p> -->
+                         <img src="https://www.daytrading.com/wp-content/uploads/2017/10/Line-chart.png" alt="" srcset="">
                     </div>
                 </div>
             </div>
@@ -322,43 +323,52 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 bg-gray-50">
+   <!-- contact -->
+  <section id="contact" class="py-16 px-4 bg-gray-50">
   <div class="container mx-auto max-w-4xl">
     <h2 class="text-4xl mb-12 text-center uppercase" style="font-family: 'Bebas Neue', sans-serif;">GET IN TOUCH</h2>
-    
-    <form action="https://formsubmit.co/hs2599225@gmail.com" method="POST" class="bg-white p-8 rounded-lg shadow-md">
-      <!-- Hidden Config -->
+
+    <form  id="contact-form" action="https://formspree.io/f/xjkookba" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+      <!-- Formspree Hidden Config (Optional) -->
       <input type="hidden" name="_subject" value="New Contact Form Submission">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- change to your success page -->
 
+      <!-- Name -->
       <div class="mb-6">
         <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-        <input type="text" id="name" name="Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
       </div>
-      
+
+      <!-- Phone -->
       <div class="mb-6">
         <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number <span class="text-red-500">*</span></label>
-        <input type="tel" id="phone" name="Phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
+        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
       </div>
-      
+
+      <!-- Email -->
       <div class="mb-6">
         <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-        <input type="email" id="email" name="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600">
       </div>
-      
+
+      <!-- Message -->
       <div class="mb-6">
         <label for="message" class="block text-gray-700 font-medium mb-2">How can we help?</label>
-        <textarea id="message" name="Message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"></textarea>
+        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"></textarea>
       </div>
-      
+
+      <!-- Submit Button -->
       <button type="submit" class="w-full bg-orange-600 text-white py-3 rounded-md font-medium hover:bg-orange-700 transition">
         SUBMIT
       </button>
     </form>
   </div>
 </section>
+
+
+
 
 
 <!-- twitter -->

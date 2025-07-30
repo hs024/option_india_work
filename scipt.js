@@ -102,3 +102,27 @@
       });
     }
   })();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (event) {
+      console.log("Form submitted. Sending data to Formspree...");
+    });
+  });
+
+   const form = document.getElementById("contact-form");
+   form.addEventListener("submit", async (e) => {
+     e.preventDefault();
+     const formData = new FormData(form);
+     const payload = Object.fromEntries(formData.entries());
+
+     const res = await fetch("http://localhost:5000/contact", {
+       method: "POST",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify(payload),
+     });
+
+     const data = await res.json();
+     alert(data.message);
+   });
